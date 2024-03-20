@@ -49,7 +49,7 @@ const RecordCard = () => {
               </h2>
               <AccordionPanel>
                 <Flex gap={2} wrap="wrap">
-                  {words.map((word) => (
+                  {words.sort().map((word) => (
                     <Tag key={word}>
                       <TagLabel>{word}</TagLabel>
                       <TagCloseButton onClick={() => removeRecord(word)} />
