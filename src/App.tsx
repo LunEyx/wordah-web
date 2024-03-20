@@ -1,4 +1,4 @@
-import { Container, Flex } from '@chakra-ui/react'
+import { Box, Container, Flex } from '@chakra-ui/react'
 import InputCard from './components/inputRegion/InputCard'
 import RecentWordCard from './components/recentRegion/RecentWordCard'
 import RecordCard from './components/recordRegion/WordRecordCard'
@@ -16,6 +16,9 @@ function App() {
           <InputCard />
           <RecordCard />
         </Flex>
+        <Box position="absolute" bottom="0" right="0" p={4}>
+          v1.0.1
+        </Box>
       </Container>
     )
   )
