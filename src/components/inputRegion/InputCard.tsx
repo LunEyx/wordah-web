@@ -22,7 +22,9 @@ const InputCard = () => {
         <Flex gap={4}>
           <AnswerInput
             value={answer}
-            onChange={(e) => setAnswer(e.target.value.toLowerCase())}
+            onChange={(e) =>
+              setAnswer(e.target.value.toLowerCase().replace(/[^a-z]/g, ''))
+            }
             onSubmit={handleSubmit}
           />
           <AnswerSubmitButton onClick={handleSubmit} />
