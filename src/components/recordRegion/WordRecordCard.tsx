@@ -2,9 +2,6 @@ import {
   Card,
   CardBody,
   Flex,
-  Tag,
-  TagLabel,
-  TagCloseButton,
   Accordion,
   AccordionItem,
   AccordionButton,
@@ -13,6 +10,7 @@ import {
   AccordionPanel,
 } from '@chakra-ui/react'
 import { useRecordContext } from '../../contexts/RecordContext'
+import RecordTag from './RecordTag'
 
 const RecordCard = () => {
   const { words, removeRecord } = useRecordContext()
@@ -50,10 +48,12 @@ const RecordCard = () => {
               <AccordionPanel>
                 <Flex gap={2} wrap="wrap">
                   {words.sort().map((word) => (
-                    <Tag key={word}>
-                      <TagLabel>{word}</TagLabel>
-                      <TagCloseButton onClick={() => removeRecord(word)} />
-                    </Tag>
+                    <RecordTag
+                      key={word}
+                      word={word}
+                      closable
+                      onClose={() => removeRecord(word)}
+                    />
                   ))}
                 </Flex>
               </AccordionPanel>
