@@ -6,6 +6,7 @@ type RecordContextType = {
   wordCount: number
   words: string[]
   longestWord: string
+  recentWords: string[]
   checkRecord: (word: string) => boolean
   addRecord: (word: string) => void
   removeRecord: (word: string) => void
@@ -16,6 +17,7 @@ const initialState: RecordContextType = {
   wordCount: 0,
   words: [],
   longestWord: '',
+  recentWords: [],
   checkRecord: () => false,
   addRecord: () => {},
   removeRecord: () => {},
@@ -36,6 +38,7 @@ const RecordProvider = (props: RecordProviderProps) => {
   const [record, setRecord] = useState<string[]>([])
   const [recordMap, setRecordMap] = useState<{ [key: string]: boolean }>({})
   const [longestWord, setLongestWord] = useState('')
+  const [recentWords, setRecentWords] = useState<string[]>([])
   const toast = useToast()
 
   useEffect(() => {
@@ -109,6 +112,7 @@ const RecordProvider = (props: RecordProviderProps) => {
     if (word.length > longestWord.length) {
       setLongestWord(word)
     }
+    setRecentWords((prev) => [...prev.slice(-4), word])
   }
 
   const removeRecord = (word: string) => {
@@ -121,6 +125,7 @@ const RecordProvider = (props: RecordProviderProps) => {
     wordCount: record.length,
     words: record,
     longestWord,
+    recentWords,
     addRecord,
     removeRecord,
     checkRecord,
