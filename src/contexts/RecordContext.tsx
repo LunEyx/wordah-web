@@ -5,6 +5,7 @@ type RecordContextType = {
   isLoading: boolean
   wordCount: number
   words: string[]
+  longestWord: string
   checkRecord: (word: string) => boolean
   addRecord: (word: string) => void
   removeRecord: (word: string) => void
@@ -14,6 +15,7 @@ const initialState: RecordContextType = {
   isLoading: true,
   wordCount: 0,
   words: [],
+  longestWord: '',
   checkRecord: () => false,
   addRecord: () => {},
   removeRecord: () => {},
@@ -33,6 +35,7 @@ const RecordProvider = (props: RecordProviderProps) => {
   const [wordList, setWordList] = useState<{ [key: string]: number }>({})
   const [record, setRecord] = useState<string[]>([])
   const [recordMap, setRecordMap] = useState<{ [key: string]: boolean }>({})
+  const [longestWord, setLongestWord] = useState('')
   const toast = useToast()
 
   useEffect(() => {
@@ -54,10 +57,17 @@ const RecordProvider = (props: RecordProviderProps) => {
       const words = JSON.parse(data)
       setRecord(words)
       const map = {} as { [key: string]: boolean }
+      let maxLength = 0
+      let lw = ''
       for (const word of words) {
         map[word] = true
+        if (word.length > maxLength) {
+          maxLength = word.length
+          lw = word
+        }
       }
       setRecordMap(map)
+      setLongestWord(lw)
     }
   }, [])
 
@@ -96,6 +106,9 @@ const RecordProvider = (props: RecordProviderProps) => {
 
     setRecord((prev) => [...prev, word])
     setRecordMap((prev) => ({ ...prev, [word]: true }))
+    if (word.length > longestWord.length) {
+      setLongestWord(word)
+    }
   }
 
   const removeRecord = (word: string) => {
@@ -107,6 +120,7 @@ const RecordProvider = (props: RecordProviderProps) => {
     isLoading,
     wordCount: record.length,
     words: record,
+    longestWord,
     addRecord,
     removeRecord,
     checkRecord,
