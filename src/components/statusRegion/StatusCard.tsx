@@ -7,7 +7,7 @@ const StatusCard = () => {
   return (
     <Card>
       <CardBody>
-        <Text>Word: {wordCount}</Text>
+        <Text>Word Count: {wordCount}</Text>
       </CardBody>
     </Card>
   )
