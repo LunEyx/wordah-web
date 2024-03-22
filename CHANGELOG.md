@@ -1,5 +1,11 @@
 # Changelog
 
+## [Unreleased] 2024-03-23
+
+### Added
+
+- achievement system
+
 ## [1.0.1] - 2024-03-21
 
 ### Added
