@@ -23,8 +23,7 @@ const initialState: RecordContextType = {
   removeRecord: () => {},
 }
 
-const RecordContext = createContext<RecordContextType>(initialState)
-export const useRecordContext = () => useContext(RecordContext)
+export const RecordContext = createContext<RecordContextType>(initialState)
 
 interface RecordProviderProps {
   children: React.ReactNode

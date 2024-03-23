@@ -1,11 +1,11 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { Card, CardBody, Flex, Text } from '@chakra-ui/react'
-import { useRecordContext } from '../../contexts/RecordContext'
+import { RecordContext } from '../../contexts/RecordContext'
 import AnswerInput from './AnswerInput'
 import AnswerSubmitButton from './AnswerSubmitButton'
 
 const InputCard = () => {
-  const { addRecord, checkRecord } = useRecordContext()
+  const { addRecord, checkRecord } = useContext(RecordContext)
   const [answer, setAnswer] = useState('')
 
   const handleSubmit = () => {

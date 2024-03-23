@@ -1,8 +1,9 @@
+import { useContext } from 'react'
 import { Flex, Text } from '@chakra-ui/react'
-import { useRecordContext } from '../../contexts/RecordContext'
+import { RecordContext } from '../../contexts/RecordContext'
 
 const StatusCard = () => {
-  const { wordCount, longestWord } = useRecordContext()
+  const { wordCount, longestWord } = useContext(RecordContext)
 
   return (
     <Flex flexDir="column" align="end">
