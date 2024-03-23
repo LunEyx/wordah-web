@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from 'react'
+import { createContext, useEffect, useState } from 'react'
 import { useToast } from '@chakra-ui/react'
 
 type RecordContextType = {

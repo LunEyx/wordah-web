@@ -1,4 +1,10 @@
-import { createContext, ReactNode, useEffect, useState } from 'react'
+import {
+  createContext,
+  ReactNode,
+  useCallback,
+  useEffect,
+  useState,
+} from 'react'
 import { ACHIEVEMENTS_DATA } from '../constants/achievements'
 import { Achievement } from '../types/achievement'
 import { useDisclosure } from '@chakra-ui/react'
@@ -37,6 +43,22 @@ export const AchievementProvider = (props: AchievementProviderType) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const achievementToast = useAchievementToast()
 
+  const completeAchievement = useCallback(
+    (id: number) => {
+      setAchievements((prev) => {
+        prev[id].isCompleted = true
+
+        return { ...prev }
+      })
+
+      achievementToast({
+        title: ACHIEVEMENTS_DATA[id].title,
+        description: ACHIEVEMENTS_DATA[id].description,
+      })
+    },
+    [achievementToast],
+  )
+
   useEffect(() => {
     const result: { [key: number]: Achievement } = {}
     for (const achievement of ACHIEVEMENTS_DATA) {
@@ -52,20 +74,7 @@ export const AchievementProvider = (props: AchievementProviderType) => {
     if (achievements[1] && !achievements[1].isCompleted) {
       completeAchievement(1)
     }
-  }, [achievements])
-
-  const completeAchievement = (id: number) => {
-    setAchievements((prev) => {
-      prev[id].isCompleted = true
-
-      return { ...prev }
-    })
-
-    achievementToast({
-      title: achievements[id].title,
-      description: achievements[id].description,
-    })
-  }
+  }, [achievements, completeAchievement])
 
   const value = {
     achievements: Object.values(achievements),
