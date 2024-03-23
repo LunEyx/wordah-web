@@ -6,6 +6,9 @@ import StatusCard from './components/statusRegion/StatusCard'
 import { RecordContext } from './contexts/RecordContext'
 import AchievementModal from './components/modals/AchievementModal'
 import SideMenu from './components/menu/SideMenu'
+import CharacterContainer from './components/character/CharacterContainer'
+import DialogueContainer from './components/character/DialogueContainer'
+import { DialogueProvider } from './contexts/DialogueContext'
 
 function App() {
   const { isLoading } = useContext(RecordContext)
@@ -20,9 +23,21 @@ function App() {
         </Box>
 
         <Container maxW="container.lg" mt={16}>
-          <Flex flexDir="column" justify="center" rowGap={4} w="100%">
-            <InputCard />
-            <RecentWordCard />
+          <Flex
+            flexDir="column"
+            align="center"
+            justify="center"
+            rowGap={4}
+            w="100%"
+          >
+            <CharacterContainer />
+            <DialogueProvider>
+              <DialogueContainer />
+              <InputCard />
+            </DialogueProvider>
+            <Box w="100%">
+              <RecentWordCard />
+            </Box>
           </Flex>
           <Box position="absolute" bottom="0" right="0" p={4}>
             v1.0.1
