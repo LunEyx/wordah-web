@@ -31,7 +31,7 @@ const DrawerMenu = () => {
   return (
     <>
       <IconButton aria-label="menu" icon={<HamburgerIcon />} onClick={onOpen} />
-      <Drawer isOpen={isOpen} onClose={onClose}>
+      <Drawer placement="left" isOpen={isOpen} onClose={onClose}>
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />

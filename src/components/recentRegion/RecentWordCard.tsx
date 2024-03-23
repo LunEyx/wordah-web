@@ -1,9 +1,10 @@
+import { useContext } from 'react'
 import { Card, CardBody, CardHeader, Flex } from '@chakra-ui/react'
-import { useRecordContext } from '../../contexts/RecordContext'
+import { RecordContext } from '../../contexts/RecordContext'
 import RecordTag from '../recordRegion/RecordTag'
 
 const RecentWordCard = () => {
-  const { recentWords, removeRecord } = useRecordContext()
+  const { recentWords, removeRecord } = useContext(RecordContext)
   return (
     <Card>
       <CardHeader>Recently Added Words</CardHeader>

@@ -1,0 +1,5 @@
+export enum CHECK_RECORD_RESULTS {
+  NEW = 'NEW',
+  UNKNOWN = 'UNKNOWN',
+  KNOWN = 'KNOWN',
+}

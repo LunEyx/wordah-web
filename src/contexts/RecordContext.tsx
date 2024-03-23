@@ -1,5 +1,6 @@
-import { createContext, useContext, useEffect, useState } from 'react'
+import { createContext, useEffect, useState } from 'react'
 import { useToast } from '@chakra-ui/react'
+import { CHECK_RECORD_RESULTS } from '../constants/record'
 
 type RecordContextType = {
   isLoading: boolean
@@ -7,7 +8,7 @@ type RecordContextType = {
   words: string[]
   longestWord: string
   recentWords: string[]
-  checkRecord: (word: string) => boolean
+  checkRecord: (word: string) => CHECK_RECORD_RESULTS
   addRecord: (word: string) => void
   removeRecord: (word: string) => void
 }
@@ -18,13 +19,12 @@ const initialState: RecordContextType = {
   words: [],
   longestWord: '',
   recentWords: [],
-  checkRecord: () => false,
+  checkRecord: () => CHECK_RECORD_RESULTS.NEW,
   addRecord: () => {},
   removeRecord: () => {},
 }
 
-const RecordContext = createContext<RecordContextType>(initialState)
-export const useRecordContext = () => useContext(RecordContext)
+export const RecordContext = createContext<RecordContextType>(initialState)
 
 interface RecordProviderProps {
   children: React.ReactNode
@@ -80,7 +80,7 @@ const RecordProvider = (props: RecordProviderProps) => {
     localStorage.setItem('record', JSON.stringify(record))
   }, [record])
 
-  const checkRecord = (word: string) => {
+  const checkRecord = (word: string): CHECK_RECORD_RESULTS => {
     if ((wordList as { [key: string]: number })[word] === undefined) {
       toast({
         title: 'Invalid word',
@@ -89,7 +89,7 @@ const RecordProvider = (props: RecordProviderProps) => {
         duration: 2000,
         isClosable: true,
       })
-      return false
+      return CHECK_RECORD_RESULTS.UNKNOWN
     }
     if (recordMap[word]) {
       toast({
@@ -99,9 +99,9 @@ const RecordProvider = (props: RecordProviderProps) => {
         duration: 2000,
         isClosable: true,
       })
-      return false
+      return CHECK_RECORD_RESULTS.KNOWN
     }
-    return true
+    return CHECK_RECORD_RESULTS.NEW
   }
 
   const addRecord = (word: string) => {
