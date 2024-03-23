@@ -1,3 +1,4 @@
+import { useContext } from 'react'
 import {
   Card,
   CardBody,
@@ -9,11 +10,11 @@ import {
   Box,
   AccordionPanel,
 } from '@chakra-ui/react'
-import { useRecordContext } from '../../contexts/RecordContext'
+import { RecordContext } from '../../contexts/RecordContext'
 import RecordTag from './RecordTag'
 
 const RecordCard = () => {
-  const { words, removeRecord } = useRecordContext()
+  const { words, removeRecord } = useContext(RecordContext)
 
   const wordsByLength: { [key: number]: string[] } = {}
 

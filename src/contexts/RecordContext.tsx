@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from 'react'
+import { createContext, useEffect, useState } from 'react'
 import { useToast } from '@chakra-ui/react'
 
 type RecordContextType = {
@@ -23,8 +23,7 @@ const initialState: RecordContextType = {
   removeRecord: () => {},
 }
 
-const RecordContext = createContext<RecordContextType>(initialState)
-export const useRecordContext = () => useContext(RecordContext)
+export const RecordContext = createContext<RecordContextType>(initialState)
 
 interface RecordProviderProps {
   children: React.ReactNode
