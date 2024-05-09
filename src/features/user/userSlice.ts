@@ -1,14 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 
-export interface UserState {
+interface UserState {
   isFirstVisit: boolean
+  isLoadedSavedData: boolean
   target: number
 }
 
 const initialState: UserState = {
   isFirstVisit: true,
-  target: 0,
+  isLoadedSavedData: false,
+  target: 5000,
 }
 
 export const userSlice = createSlice({
