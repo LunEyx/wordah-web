@@ -11,7 +11,7 @@ export const IDLE_DIALOGUES = [
   "I'm hungry...",
   'I want word! I want food!',
   'Plzzzzzz!!! Food~~',
-  'You look delicious to me. Rrrrrr',
+  'You look delicious to me. Rrrrrr!',
 ]
 
 export const NEW_WORD_DIALOGUES = [

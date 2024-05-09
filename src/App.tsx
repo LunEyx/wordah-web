@@ -9,6 +9,7 @@ import SideMenu from './components/menu/SideMenu'
 import CharacterContainer from './components/character/CharacterContainer'
 import DialogueContainer from './components/character/DialogueContainer'
 import { DialogueProvider } from './contexts/DialogueContext'
+import WordRecordModal from './components/recordRegion/WordRecordModal'
 
 function App() {
   const { isLoading } = useContext(RecordContext)
@@ -45,6 +46,7 @@ function App() {
         </Container>
 
         <AchievementModal />
+        <WordRecordModal />
       </>
     )
   )

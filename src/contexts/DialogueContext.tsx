@@ -38,8 +38,12 @@ export const DialogueProvider = (props: DialogueProviderType) => {
     clearTimeout(timeoutId1.current)
     clearTimeout(timeoutId2.current)
     if (reason !== DialogueReason.IDLE && reason !== DialogueReason.TIPS) {
-      setTimeout(() => generateDialogue('', DialogueReason.IDLE), 15000)
-      setTimeout(() => generateDialogue('', DialogueReason.TIPS), 60000)
+      timeoutId1.current = Number(
+        setTimeout(() => generateDialogue('', DialogueReason.IDLE), 15000),
+      )
+      timeoutId2.current = Number(
+        setTimeout(() => generateDialogue('', DialogueReason.TIPS), 60000),
+      )
     }
     if (reason != DialogueReason.KNOWN_WORD && word in SET_DIALOGUES) {
       setContent(SET_DIALOGUES[word as keyof typeof SET_DIALOGUES])

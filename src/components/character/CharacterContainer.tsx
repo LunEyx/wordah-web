@@ -1,5 +1,5 @@
 import { Box, Image } from '@chakra-ui/react'
-import WoahImg from '../../assets/woah.jpg'
+import WoahImg from '../../assets/wordah.png'
 
 const CharacterContainer = () => {
   return (

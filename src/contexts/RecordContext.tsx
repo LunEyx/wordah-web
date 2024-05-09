@@ -116,8 +116,18 @@ const RecordProvider = (props: RecordProviderProps) => {
   }
 
   const removeRecord = (word: string) => {
+    setRecentWords((prev) => prev.filter((w) => w !== word))
     setRecord((prev) => prev.filter((w) => w !== word))
     setRecordMap((prev) => ({ ...prev, [word]: false }))
+    if (word === longestWord) {
+      let lw = ''
+      for (const w of record) {
+        if (w !== word && w.length > lw.length) {
+          lw = w
+        }
+      }
+      setLongestWord(lw)
+    }
   }
 
   const value = {
