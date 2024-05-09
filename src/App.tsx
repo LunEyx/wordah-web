@@ -10,6 +10,7 @@ import CharacterContainer from './components/character/CharacterContainer'
 import DialogueContainer from './components/character/DialogueContainer'
 import { DialogueProvider } from './contexts/DialogueContext'
 import WordRecordModal from './components/recordRegion/WordRecordModal'
+import ProgressContainer from './components/main/ProgressContainer'
 
 function App() {
   const { isLoading } = useContext(RecordContext)
@@ -31,6 +32,7 @@ function App() {
             rowGap={4}
             w="100%"
           >
+            <ProgressContainer />
             <CharacterContainer />
             <DialogueProvider>
               <DialogueContainer />
