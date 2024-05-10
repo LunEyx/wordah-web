@@ -13,47 +13,59 @@ import BackgroundImg from '../assets/background.png'
 
 const MainPage = () => {
   return (
-    <Box
+    <Flex
       w="100vw"
       h="100vh"
+      flexDir="column"
       bg={`url(${BackgroundImg})`}
       bgRepeat="no-repeat"
       bgSize="cover"
       bgPos="center"
     >
-      <Box position="absolute" top="0" left="0" p={4}>
-        <SideMenu />
-      </Box>
-      <Box position="absolute" top="0" right="0" p={4}>
-        <StatusCard />
+      <Flex w="100%" h="80%" p={4}>
+        <Flex as="nav" w="250px" minW="250px">
+          <SideMenu />
+        </Flex>
+        <Flex flex={1} justify="center">
+          <Flex flexDir="column" maxW="1200px" p={4}>
+            <Box as="header">
+              <ProgressContainer />
+            </Box>
+
+            <Flex
+              flexDir="column"
+              align="center"
+              justify="center"
+              rowGap={4}
+              w="100%"
+              flex={1}
+              py={4}
+            >
+              <CharacterContainer />
+              <DialogueProvider>
+                <DialogueContainer />
+                <InputCard />
+              </DialogueProvider>
+            </Flex>
+          </Flex>
+        </Flex>
+
+        <Box as="aside" w="250px" minW="250px">
+          <StatusCard />
+        </Box>
+      </Flex>
+
+      <Box as="footer" w="100%" h="20%">
+        <RecentWordCard />
       </Box>
 
-      <Container maxW="container.lg" pt={16}>
-        <Flex
-          flexDir="column"
-          align="center"
-          justify="center"
-          rowGap={4}
-          w="100%"
-        >
-          <ProgressContainer />
-          <CharacterContainer />
-          <DialogueProvider>
-            <DialogueContainer />
-            <InputCard />
-          </DialogueProvider>
-          <Box w="100%" h="20%" pos="fixed" bottom={0}>
-            <RecentWordCard />
-          </Box>
-        </Flex>
-        <Box position="absolute" bottom="0" right="0" p={4}>
-          v1.0.1
-        </Box>
-      </Container>
+      <Box position="fixed" bottom="0" right="0" p={4}>
+        v1.0.1
+      </Box>
 
       <AchievementModal />
       <WordRecordModal />
-    </Box>
+    </Flex>
   )
 }
 
