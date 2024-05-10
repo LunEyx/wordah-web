@@ -8,10 +8,11 @@ import './index.css'
 import { AchievementProvider } from './contexts/AchievementContext.tsx'
 import { ModalProvider } from './contexts/ModalContext.tsx'
 import { store } from './app/store.ts'
+import { theme } from './theme'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       <Provider store={store}>
         <RecordProvider>
           <ModalProvider>
