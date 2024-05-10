@@ -6,7 +6,12 @@ const ProgressContainer = () => {
 
   return (
     <Box pos="relative" w="100%">
-      <Progress borderRadius="1.5em" height="1.5em" value={50} />
+      <Progress
+        border="5px solid #ffbf64"
+        borderRadius="1.5em"
+        height="1.5em"
+        value={50}
+      />
       <Text pos="absolute" top="0" right="1.5em">
         / {target}
       </Text>
