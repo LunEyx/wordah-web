@@ -3,7 +3,7 @@ import WoahImg from '../../assets/wordah.png'
 
 const CharacterContainer = () => {
   return (
-    <Box w="300px" h="200px" backgroundColor="lightblue">
+    <Box w="80%">
       <Image src={WoahImg} />
     </Box>
   )

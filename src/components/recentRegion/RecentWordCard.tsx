@@ -8,10 +8,10 @@ const RecentWordCard = () => {
   const { recentWords, removeRecord } = useContext(RecordContext)
   return (
     <Card
+      h="100%"
       bg={`url(${BackgroundImg})`}
-      bgSize="cover"
-      bgRepeat="no-repeat"
-      bgPos="top"
+      bgSize="auto 100%"
+      bgRepeat="repeat-x"
     >
       <CardHeader>Recently Added Words</CardHeader>
       <CardBody>

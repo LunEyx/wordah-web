@@ -42,7 +42,7 @@ const MainPage = () => {
             <DialogueContainer />
             <InputCard />
           </DialogueProvider>
-          <Box w="100%" pos="fixed" bottom={0}>
+          <Box w="100%" h="20%" pos="fixed" bottom={0}>
             <RecentWordCard />
           </Box>
         </Flex>

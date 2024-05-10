@@ -1,6 +1,6 @@
 import { Box, Flex, Image, Progress } from '@chakra-ui/react'
 import { useAppDispatch } from '../hooks/redux'
-import WordahBg from '../assets/wordah.png'
+import WordahBg from '../assets/logo.png'
 import { useEffect, useState } from 'react'
 import { setInitialized } from '../features/game/gameSlice'
 
@@ -29,8 +29,8 @@ const InitializePage = () => {
       </Box>
       <Box w="80%">
         <Progress
-          borderRadius="1.5rem"
-          height="1.5rem"
+          borderRadius="1.5em"
+          height="1.5em"
           hasStripe
           value={progress}
         />
