@@ -1,4 +1,4 @@
-import { Box, Container, Flex } from '@chakra-ui/react'
+import { Box, Flex } from '@chakra-ui/react'
 import SideMenu from '../components/menu/SideMenu'
 import StatusCard from '../components/statusRegion/StatusCard'
 import InputCard from '../components/inputRegion/InputCard'

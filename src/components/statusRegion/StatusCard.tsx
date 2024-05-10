@@ -1,7 +1,6 @@
 import { useContext } from 'react'
 import { Flex, IconButton, Image, Text } from '@chakra-ui/react'
 import { RecordContext } from '../../contexts/RecordContext'
-import { InfoOutlineIcon } from '@chakra-ui/icons'
 import { ModalContext } from '../../contexts/ModalContext'
 import HoneyPotIcon from '../../assets/honeyPotIcon.png'
 
