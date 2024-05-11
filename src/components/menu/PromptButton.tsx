@@ -1,4 +1,3 @@
-import { useMemo } from 'react'
 import { useHover } from 'react-use'
 import { Image } from '@chakra-ui/react'
 import PromptIcon from '../../assets/icons/prompt.png'

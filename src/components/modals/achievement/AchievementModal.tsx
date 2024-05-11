@@ -7,9 +7,9 @@ import {
   ModalHeader,
   ModalOverlay,
 } from '@chakra-ui/react'
-import AchievementCard from '../achievement/AchievementCard'
+import AchievementCard from '../../achievement/AchievementCard'
 import { useContext } from 'react'
-import { AchievementContext } from '../../contexts/AchievementContext'
+import { AchievementContext } from '../../../contexts/AchievementContext'
 
 const AchievementModal = () => {
   const { isOpen, onClose, achievements } = useContext(AchievementContext)

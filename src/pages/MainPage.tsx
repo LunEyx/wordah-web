@@ -5,19 +5,23 @@ import InputCard from '../components/inputRegion/InputCard'
 import RecentWordCard from '../components/recentRegion/RecentWordCard'
 import CharacterContainer from '../components/character/CharacterContainer'
 import DialogueContainer from '../components/character/DialogueContainer'
-import AchievementModal from '../components/modals/AchievementModal'
+import AchievementModal from '../components/modals/achievement/AchievementModal'
 import WordRecordModal from '../components/recordRegion/WordRecordModal'
 import ProgressContainer from '../components/main/ProgressContainer'
 import { DialogueProvider } from '../contexts/DialogueContext'
-import BackgroundImg from '../assets/bg/background01.png'
+import SettingsModal from '../components/modals/settings/SettingsModal'
+import { useAppSelector } from '../hooks/redux'
+import { backgroundImages } from '../constants/background'
 
 const MainPage = () => {
+  const backgroundIndex = useAppSelector((state) => state.user.backgroundIndex)
+
   return (
     <Flex
       w="100vw"
       h="100vh"
       flexDir="column"
-      bg={`url(${BackgroundImg})`}
+      bg={`url(${backgroundImages[backgroundIndex]})`}
       bgRepeat="no-repeat"
       bgSize="cover"
       bgPos="center"
@@ -63,6 +67,7 @@ const MainPage = () => {
         v1.0.1
       </Box>
 
+      <SettingsModal />
       <AchievementModal />
       <WordRecordModal />
     </Flex>

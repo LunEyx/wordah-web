@@ -1,11 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit'
 import gameReducer from '../features/game/gameSlice'
 import userReducer from '../features/user/userSlice'
+import settingsModalReducer from '../features/modal/settingsSlice'
 
 export const store = configureStore({
   reducer: {
     game: gameReducer,
     user: userReducer,
+    settingsModal: settingsModalReducer,
   },
   devTools: import.meta.env.DEV,
 })
