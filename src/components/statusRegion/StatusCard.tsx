@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import { Flex, IconButton, Image, Text } from '@chakra-ui/react'
 import { RecordContext } from '../../contexts/RecordContext'
 import { ModalContext } from '../../contexts/ModalContext'
-import HoneyPotIcon from '../../assets/honeyPotIcon.png'
+import HoneyPotIcon from '../../assets/icons/honeyPot.png'
 
 const StatusCard = () => {
   const { wordCount, longestWord } = useContext(RecordContext)

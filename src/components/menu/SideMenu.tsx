@@ -1,14 +1,14 @@
 import { Flex } from '@chakra-ui/react'
-import DrawerMenu from './DrawerMenu'
 import AchievementButton from './AchievementButton'
-import ChallengeButton from './ChallengeButton'
+import ShopButton from './ShopButton'
+import SettingsButton from './SettingsButton'
 
 const SideMenu = () => {
   return (
     <Flex flexDir="column" align="center" rowGap={2}>
-      <DrawerMenu />
       <AchievementButton />
-      <ChallengeButton />
+      <ShopButton />
+      <SettingsButton />
     </Flex>
   )
 }
