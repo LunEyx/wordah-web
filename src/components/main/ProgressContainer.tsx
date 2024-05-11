@@ -5,7 +5,12 @@ const ProgressContainer = () => {
   const target = useAppSelector((state) => state.user.target)
 
   return (
-    <Box pos="relative" w="100%">
+    <Box
+      pos="relative"
+      w="100%"
+      border="3px solid #713d20"
+      borderRadius="1.5em"
+    >
       <Progress
         border="5px solid #ffbf64"
         borderRadius="1.5em"
