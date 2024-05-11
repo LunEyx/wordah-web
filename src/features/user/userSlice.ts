@@ -6,6 +6,8 @@ interface UserState {
   isLoadedSavedData: boolean
   target: number
   backgroundIndex: number
+  portraitBorderIndex: number
+  portraitIndex: number
 }
 
 const initialState: UserState = {
@@ -13,6 +15,8 @@ const initialState: UserState = {
   isLoadedSavedData: false,
   target: 5000,
   backgroundIndex: 0,
+  portraitBorderIndex: 0,
+  portraitIndex: 0,
 }
 
 export const userSlice = createSlice({
@@ -28,9 +32,21 @@ export const userSlice = createSlice({
     setBackground: (state, action: PayloadAction<number>) => {
       state.backgroundIndex = action.payload
     },
+    setPortraitBorder: (state, action: PayloadAction<number>) => {
+      state.portraitBorderIndex = action.payload
+    },
+    setPortrait: (state, action: PayloadAction<number>) => {
+      state.portraitIndex = action.payload
+    },
   },
 })
 
-export const { setFirstVisit, setTarget, setBackground } = userSlice.actions
+export const {
+  setFirstVisit,
+  setTarget,
+  setBackground,
+  setPortraitBorder,
+  setPortrait,
+} = userSlice.actions
 
 export default userSlice.reducer
