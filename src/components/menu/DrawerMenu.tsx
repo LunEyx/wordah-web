@@ -35,7 +35,7 @@ const DrawerMenu = () => {
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
-          <DrawerHeader>Vocabulary Test</DrawerHeader>
+          <DrawerHeader>Wordah</DrawerHeader>
           <DrawerBody>
             <Flex flexDir="column" gap={4}>
               <Button variant="outline" onClick={handleAchievementsClick}>

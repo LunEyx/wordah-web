@@ -9,7 +9,7 @@ import AchievementModal from '../components/modals/AchievementModal'
 import WordRecordModal from '../components/recordRegion/WordRecordModal'
 import ProgressContainer from '../components/main/ProgressContainer'
 import { DialogueProvider } from '../contexts/DialogueContext'
-import BackgroundImg from '../assets/background.png'
+import BackgroundImg from '../assets/bg/background01.png'
 
 const MainPage = () => {
   return (

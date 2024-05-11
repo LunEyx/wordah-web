@@ -1,9 +1,10 @@
-import { IconButton, Image } from '@chakra-ui/react'
+import { Image } from '@chakra-ui/react'
 import ShopIcon from '../../assets/icons/shop.png'
+import MenuButton from './MenuButton'
 
 const ShopButton = () => {
   return (
-    <IconButton aria-label="shop" icon={<Image src={ShopIcon} w="48px" />} />
+    <MenuButton aria-label="shop" icon={<Image src={ShopIcon} w="56px" />} />
   )
 }
 
