@@ -1,7 +1,7 @@
 import { Box, Progress, Text } from '@chakra-ui/react'
 import { useAppSelector } from '../../hooks/redux'
 
-const ProgressContainer = () => {
+const TargetProgressContainer = () => {
   const target = useAppSelector((state) => state.user.target)
 
   return (
@@ -24,4 +24,4 @@ const ProgressContainer = () => {
   )
 }
 
-export default ProgressContainer
+export default TargetProgressContainer

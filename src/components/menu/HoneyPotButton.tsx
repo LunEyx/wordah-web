@@ -5,6 +5,8 @@ import MenuButton from './MenuButton'
 const PromptButton = () => {
   return (
     <MenuButton
+      minW="64px"
+      minH="64px"
       aria-label="shop"
       icon={<Image src={HoneyPotIcon} w="64px" />}
     />

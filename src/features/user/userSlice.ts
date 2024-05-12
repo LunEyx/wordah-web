@@ -7,7 +7,9 @@ interface UserState {
   target: number
   backgroundIndex: number
   portraitBorderIndex: number
-  portraitIndex: number
+  wordahClothIndex: number
+  wordahClothIndex: number
+  wordahAccessaryIndex: number
 }
 
 const initialState: UserState = {
@@ -16,7 +18,9 @@ const initialState: UserState = {
   target: 5000,
   backgroundIndex: 0,
   portraitBorderIndex: 0,
-  portraitIndex: 0,
+  wordahClothIndex: 0,
+  wordahClothIndex: 0,
+  wordahAccessaryIndex: 0,
 }
 
 export const userSlice = createSlice({
@@ -36,7 +40,13 @@ export const userSlice = createSlice({
       state.portraitBorderIndex = action.payload
     },
     setPortrait: (state, action: PayloadAction<number>) => {
-      state.portraitIndex = action.payload
+      state.wordahClothIndex = action.payload
+    },
+    setWordahCloth: (state, action: PayloadAction<number>) => {
+      state.wordahClothIndex = action.payload
+    },
+    setWordahAccessary: (state, action: PayloadAction<number>) => {
+      state.wordahAccessaryIndex = action.payload
     },
   },
 })
@@ -47,6 +57,8 @@ export const {
   setBackground,
   setPortraitBorder,
   setPortrait,
+  setWordahCloth,
+  setWordahAccessary,
 } = userSlice.actions
 
 export default userSlice.reducer

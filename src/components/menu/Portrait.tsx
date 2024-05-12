@@ -8,7 +8,7 @@ const Portrait = () => {
   const portraitBorderIndex = useAppSelector(
     (state) => state.user.portraitBorderIndex,
   )
-  const portraitIndex = useAppSelector((state) => state.user.portraitIndex)
+  const portraitIndex = useAppSelector((state) => state.user.wordahClothIndex)
 
   return (
     <Box

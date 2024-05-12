@@ -7,6 +7,7 @@ import MenuButton from './MenuButton'
 const PromptButton = () => {
   const menuButton = (hovered: boolean) => (
     <MenuButton
+      minH="64px"
       aria-label="shop"
       icon={<Image src={hovered ? AnimatedPromptIcon : PromptIcon} w="64px" />}
     />

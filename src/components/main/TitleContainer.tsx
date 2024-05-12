@@ -3,7 +3,7 @@ import TitleImg from '../../assets/wordah.png'
 
 const TitleContainer = () => {
   return (
-    <Box w="80%">
+    <Box w="60%">
       <Image src={TitleImg} />
     </Box>
   )

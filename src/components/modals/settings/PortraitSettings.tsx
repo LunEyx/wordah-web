@@ -5,7 +5,7 @@ import { useAppDispatch, useAppSelector } from '../../../hooks/redux'
 
 const PortraitSettings = () => {
   const dispatch = useAppDispatch()
-  const portraitIndex = useAppSelector((state) => state.user.portraitIndex)
+  const portraitIndex = useAppSelector((state) => state.user.wordahClothIndex)
 
   return (
     <>

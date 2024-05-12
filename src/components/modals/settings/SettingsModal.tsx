@@ -11,6 +11,8 @@ import PortraitBorderSettings from './PortraitBorderSettings'
 import PortraitSettings from './PortraitSettings'
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux'
 import { toggleModal } from '../../../features/modal/settingsSlice'
+import WordahClothSettings from './WordahClothSettings'
+import WordahAccessarySettings from './WordahAccessarySettings'
 
 const SettingsModal = () => {
   const isOpen = useAppSelector((state) => state.settingsModal.isOpen)
@@ -31,6 +33,8 @@ const SettingsModal = () => {
           <BackgroundSettings />
           <PortraitBorderSettings />
           <PortraitSettings />
+          <WordahClothSettings />
+          <WordahAccessarySettings />
         </ModalBody>
       </ModalContent>
     </Modal>

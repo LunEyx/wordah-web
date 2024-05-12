@@ -9,6 +9,7 @@ const SettingsButton = () => {
 
   return (
     <MenuButton
+      minH="64px"
       aria-label="settings"
       icon={<Image src={SettingsIcon} w="64px" />}
       onClick={() => dispatch(toggleModal())}

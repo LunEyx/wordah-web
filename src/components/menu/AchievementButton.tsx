@@ -9,6 +9,7 @@ const AchievementButton = () => {
 
   return (
     <MenuButton
+      minH="64px"
       aria-label="achievement"
       icon={<Image src={AchievementIcon} w="64px" />}
       onClick={onOpen}

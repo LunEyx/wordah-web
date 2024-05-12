@@ -1,5 +1,17 @@
 html {
-  font-size: 28px;
+  font-size: 16px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  html {
+    font-size: 28px;
+  }
 }
 
 :root {

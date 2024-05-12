@@ -4,7 +4,12 @@ import MenuButton from './MenuButton'
 
 const ShopButton = () => {
   return (
-    <MenuButton aria-label="shop" icon={<Image src={ShopIcon} w="56px" />} />
+    <MenuButton
+      minW={{ base: '64px', lg: '70px' }}
+      minH="64px"
+      aria-label="shop"
+      icon={<Image src={ShopIcon} w="56px" />}
+    />
   )
 }
 
