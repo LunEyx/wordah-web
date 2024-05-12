@@ -3,7 +3,7 @@ import SideMenu from '../components/menu/SideMenu'
 import StatusCard from '../components/statusRegion/StatusCard'
 import InputCard from '../components/inputRegion/InputCard'
 import RecentWordCard from '../components/recentRegion/RecentWordCard'
-import CharacterContainer from '../components/character/CharacterContainer'
+import TitleContainer from '../components/main/TitleContainer'
 import DialogueContainer from '../components/character/DialogueContainer'
 import AchievementModal from '../components/modals/achievement/AchievementModal'
 import WordRecordModal from '../components/recordRegion/WordRecordModal'
@@ -47,7 +47,7 @@ const MainPage = () => {
               flex={1}
               py={4}
             >
-              <CharacterContainer />
+              <TitleContainer />
               <DialogueProvider>
                 <DialogueContainer />
                 <InputCard />
