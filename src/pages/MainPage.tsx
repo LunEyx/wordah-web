@@ -12,6 +12,7 @@ import { DialogueProvider } from '../contexts/DialogueContext'
 import SettingsModal from '../components/modals/settings/SettingsModal'
 import { useAppSelector } from '../hooks/redux'
 import { backgroundImages } from '../constants/background'
+import LongestWordContainer from '../components/main/LongestWordContainer'
 
 const MainPage = () => {
   const backgroundIndex = useAppSelector((state) => state.user.backgroundIndex)
@@ -32,8 +33,9 @@ const MainPage = () => {
         </Flex>
         <Flex flex={1} justify="center">
           <Flex flexDir="column" maxW="1200px" p={4}>
-            <Box as="header">
+            <Box as="header" textAlign="center">
               <ProgressContainer />
+              <LongestWordContainer />
             </Box>
 
             <Flex

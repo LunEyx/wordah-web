@@ -11,7 +11,11 @@ const Portrait = () => {
   const portraitIndex = useAppSelector((state) => state.user.portraitIndex)
 
   return (
-    <Box pos="relative" onClick={() => dispatch(toggleModal())}>
+    <Box
+      pos="relative"
+      onClick={() => dispatch(toggleModal())}
+      cursor="pointer"
+    >
       <Image src={portraitImages[portraitIndex]} />
       <Image
         pos="absolute"

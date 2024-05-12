@@ -9,4 +9,11 @@ export const theme = extendTheme({
     heading: 'Wordah',
     body: 'Wordah',
   },
+  styles: {
+    global: {
+      body: {
+        color: '#472715',
+      },
+    },
+  },
 })
