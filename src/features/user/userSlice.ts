@@ -8,7 +8,6 @@ interface UserState {
   backgroundIndex: number
   portraitBorderIndex: number
   wordahClothIndex: number
-  wordahClothIndex: number
   wordahAccessaryIndex: number
 }
 
@@ -18,7 +17,6 @@ const initialState: UserState = {
   target: 5000,
   backgroundIndex: 0,
   portraitBorderIndex: 0,
-  wordahClothIndex: 0,
   wordahClothIndex: 0,
   wordahAccessaryIndex: 0,
 }
