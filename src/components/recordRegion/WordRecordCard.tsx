@@ -41,7 +41,7 @@ const RecordCard = () => {
               <h2>
                 <AccordionButton>
                   <Box as="span" flex="1" textAlign="left">
-                    {length} letter{parseInt(length) > 1 && 's'}
+                    {length} star{parseInt(length) > 1 && 's'} honey
                   </Box>
                   <AccordionIcon />
                 </AccordionButton>

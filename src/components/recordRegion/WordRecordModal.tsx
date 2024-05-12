@@ -2,6 +2,7 @@ import { useContext } from 'react'
 import {
   Modal,
   ModalBody,
+  ModalCloseButton,
   ModalContent,
   ModalHeader,
   ModalOverlay,
@@ -16,10 +17,17 @@ const WordRecordModal = () => {
 
   return (
     <>
-      <Modal isOpen={isOpen} onClose={onClose} isCentered size="4xl">
+      <Modal
+        isOpen={isOpen}
+        onClose={onClose}
+        isCentered
+        size="xl"
+        scrollBehavior="inside"
+      >
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Achievements</ModalHeader>
+          <ModalHeader>Honey Pot</ModalHeader>
+          <ModalCloseButton />
           <ModalBody>
             <WordRecordCard />
           </ModalBody>
