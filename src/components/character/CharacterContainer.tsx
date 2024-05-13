@@ -15,8 +15,8 @@ const CharacterContainer = () => {
   const isRubbishSet = wordahClothIndex === 4
 
   return (
-    <Box w={{ base: '100px', md: '150px', lg: '250px' }} pos="relative">
-      <Image pos="absolute" top="0" left="0" w="100%" src={wordah.head[0]} />
+    <Box w="100%" pos="relative">
+      <Image top="0" left="0" w="100%" src={wordah.head[0]} />
       <Image
         pos="absolute"
         top="0"

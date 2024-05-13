@@ -8,7 +8,7 @@ const DialogueContainer = () => {
   const { content } = useContext(DialogueContext)
 
   return (
-    <Box pos="relative" w={{ base: '100%', md: '75%', lg: '60%', xl: '50%' }}>
+    <Box pos="relative" w={{ base: '100%', sm: '75%', lg: '60%', xl: '50%' }}>
       <Image src={ChatBubbleImg} />
       <Text
         pos="absolute"
@@ -20,7 +20,7 @@ const DialogueContainer = () => {
       >
         {content}
       </Text>
-      <Box pos="absolute" top="0" left="100%">
+      <Box pos="absolute" top="-44%" left="92%" w="50%">
         <CharacterContainer />
       </Box>
     </Box>

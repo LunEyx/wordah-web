@@ -27,7 +27,7 @@ const MainPage = () => {
       bgSize="cover"
       bgPos="center"
     >
-      <Flex w="100%" h="80%" p={4}>
+      <Flex w="100%" h="85%" p={4}>
         {/* <Show above="md"> */}
         <Flex
           as="nav"
@@ -47,7 +47,6 @@ const MainPage = () => {
             flexDir="column"
             minW={{ base: 'calc(100vw-200px)', md: '500px', lg: '600px' }}
             maxW="1200px"
-            py={4}
             px={2}
           >
             <Box as="header" textAlign="center">
@@ -79,7 +78,7 @@ const MainPage = () => {
         </Box>
       </Flex>
 
-      <Box as="footer" w="100%" h="20%">
+      <Box as="footer" w="100%" h="15%">
         <RecentWordCard />
       </Box>
 

@@ -43,7 +43,7 @@ const InputCard = () => {
   }
 
   return (
-    <Box pos="relative" w={{ base: '100%', md: '75%', lg: '60%', xl: '50%' }}>
+    <Box pos="relative" w={{ base: '100%', sm: '75%', lg: '60%', xl: '50%' }}>
       <Image src={ChatBubbleImg} />
       <Box
         pos="absolute"
